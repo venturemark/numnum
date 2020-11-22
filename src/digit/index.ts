@@ -1,14 +1,20 @@
+const delimeters: string[] = [".", "/", "-", "+", "[", "]", "#"];
+
 // Searcher is the most basic implementation of detecting a number. It simply
 // looks for digits in the given string and returns them. Note that str must not
 // contain any whitespace.
 export function Searcher(str: string): { found: boolean; match: number } {
-  // If the provided string contains a punctuation mark we do not have a normal
-  // number. In this case we cancel execution, because we are not going to find
-  // any normal number moving forward.
+  // If the provided string contains one of our undesired delimeters we do not
+  // have a normal number. Maybe we got a date string or formular. In this case
+  // we cancel execution, because we are not going to find any normal number
+  // moving forward.
   {
-    let ok: boolean = str.includes(".");
-    if (ok === true) {
-      return { found: false, match: 0 };
+    for (let i = 0; i < delimeters.length; i++) {
+      let d: string = delimeters[i];
+
+      if (str.includes(d) === true) {
+        return { found: false, match: 0 };
+      }
     }
   }
 

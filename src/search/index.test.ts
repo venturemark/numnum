@@ -128,3 +128,137 @@ test("with domain", () => {
 
   expect(l).toHaveLength(0);
 });
+
+test("with percentage", () => {
+  let s: string = "we are up around 15% since this morning";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(15);
+});
+
+test("with percentage", () => {
+  let s: string = "we are up around 15% since this morning";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(15);
+});
+
+test("with words", () => {
+  let s: string = "we got our first customer";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(1);
+});
+
+test("with words", () => {
+  let s: string = "we got our second customer";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(2);
+});
+
+test("with words", () => {
+  let s: string = "this was more like ten out of twenty";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(2);
+  expect(l).toContain(10);
+  expect(l).toContain(20);
+});
+
+test("with words", () => {
+  let s: string = "we just sold over a dozen pairs";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(2);
+  expect(l).toContain(12);
+  expect(l).toContain(2);
+});
+
+test("with words", () => {
+  let s: string = "I know this from first hand experience";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(1);
+});
+
+test("with duplicates", () => {
+  let s: string = "hindsight is twenty twenty";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(20);
+});
+
+test("with duplicates", () => {
+  let s: string = "hindsight is 20 20";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(20);
+});
+
+test("with dates", () => {
+  let s: string = "we start at the 01.04.20 with our new campaign";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(0);
+});
+
+test("with dates", () => {
+  let s: string = "we start at the 01-04-20 with our new campaign";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(0);
+});
+
+test("with dates", () => {
+  let s: string = "we start at the 01/04/20 with our new campaign";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(0);
+});
+
+test("with parantheses", () => {
+  let s: string = "we got a couple of them (16) in house";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(16);
+});
+
+test("with parantheses", () => {
+  let s: string = "we got a couple of them (16ish) in house";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(16);
+});
+
+test("with parantheses", () => {
+  let s: string = "we got a couple of them (~16) in house";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(16);
+});
