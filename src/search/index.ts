@@ -1,12 +1,12 @@
 import * as digit from "../digit";
 import * as float from "../float";
-import * as word from "../word";
+import * as slang from "../slang";
 import * as spec from "./spec";
 
 const searchers: spec.Interface[] = [
   digit.Searcher,
   float.Searcher,
-  word.Searcher,
+  slang.Searcher,
 ];
 
 // Search takes an arbitrary string and returns a list of any number found. The
