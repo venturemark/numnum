@@ -11,6 +11,7 @@ export function Searcher(str: string): { found: boolean; match: number } {
   {
     for (let i = 0; i < delimeters.length; i++) {
       let d: string = delimeters[i];
+
       if (str.includes(d) === true) {
         return { found: false, match: 0 };
       }
