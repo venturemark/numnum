@@ -22,6 +22,3 @@ export function Searcher(str: string): { found: boolean; match: number } {
 
   return { found: f, match: m };
 }
-
-// float
-// [\d]+[\.]+[\d]
