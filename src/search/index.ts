@@ -1,7 +1,8 @@
-import * as digit from "./digit";
+import * as digit from "../digit";
+import * as float from "../float";
 import * as spec from "./spec";
 
-const searchers: spec.Interface[] = [digit.Searcher];
+const searchers: spec.Interface[] = [digit.Searcher, float.Searcher];
 
 // Search takes an arbitrary string and returns a list of any number found. The
 // first element of the list returned is the item being identified as number
