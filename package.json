@@ -7,7 +7,7 @@
     "google-protobuf": "^3.13.0",
     "grpc-web": "^1.2.1"
   },
-  "description": "generated grpc api client in typescript",
+  "description": "number detection from string bodies",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-typescript": "^6.1.0",
