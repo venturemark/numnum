@@ -27,6 +27,9 @@ export function Searcher(str: string): { found: boolean; match: number } {
     }
   }
 
+  // Finally constructing the floating point number as string and parse it
+  // properly. As a safety net we process the result via parseFloat. If this
+  // returns NaN, the searcher implementation returns nothing.
   let f: boolean = false;
   let m: number = 0;
   {
