@@ -39,9 +39,10 @@
   },
   "scripts": {
     "build": "./node_modules/rollup/dist/bin/rollup -c --exports named",
+    "prepare": "./node_modules/rollup/dist/bin/rollup -c --exports named",
     "test": "./node_modules/jest/bin/jest.js"
   },
   "sideEffects": false,
   "types": "./dst/index.d.ts",
-  "version": "0.1.0"
+  "version": "0.1.1"
 }
