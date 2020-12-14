@@ -1,4 +1,4 @@
-const delimeters: string[] = [".", "/", "-", "+", "[", "]", "#"];
+const delimeters: string[] = [".", "/", "-", "+", "#"];
 
 // Searcher is the most basic implementation of detecting a number. It simply
 // looks for digits in the given string and returns them. Note that str must not

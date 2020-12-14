@@ -262,3 +262,12 @@ test("with parantheses", () => {
   expect(l).toHaveLength(1);
   expect(l).toContain(16);
 });
+
+test("with sqaure brackets", () => {
+  let s: string = "we got a couple of them [~16] in house";
+
+  let l: number[] = search.Search(s);
+
+  expect(l).toHaveLength(1);
+  expect(l).toContain(16);
+});
